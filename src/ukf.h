@@ -1,4 +1,4 @@
-#ifndef UKF_H
+﻿#ifndef UKF_H
 #define UKF_H
 
 #include "measurement_package.h"
@@ -55,6 +55,8 @@ public:
   ///* Radar measurement noise standard deviation radius change in m/s
   double std_radrd_ ;
 
+  float avoid_devide_by_zero_;
+
   ///* Weights of sigma points
   VectorXd weights_;
 
@@ -66,6 +68,12 @@ public:
 
   ///* Sigma point spreading parameter
   double lambda_;
+
+  // Сurrent NIS for Radar
+  double NIS_radar_;
+
+  // Сurrent NIS for Laser
+  double NIS_laser_;
 
 
   /**
